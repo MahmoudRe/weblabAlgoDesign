@@ -17,29 +17,19 @@ class Solution {
 
         Node[] nodes = new Node[n + 1];
 
-        for(int i = 0; i < m; i++) {
-            if(!sc.hasNextInt()) break;
+        for(int i = 0; i < nodes.length; i++) {
+            nodes[i] =  new Node();
+        }
 
+        while(sc.hasNextInt()) {
             int from = sc.nextInt();
             int to = sc.nextInt();
             sc.nextInt();
-
-            if(nodes[from] == null) {
-                nodes[from] = new Node();
-            }
-
-            if(nodes[to] == null) {
-                nodes[to] = new Node();
-            }
 
             nodes[from].outgoingEdges.add(nodes[to]);
         }
 
         sc.close();
-
-        for(int i = 0; i < nodes.length; i++) {
-            nodes[i] = (nodes[i] == null)? new Node(): nodes[i];
-        }
 
         Queue<Node> q = new LinkedList<>();
         q.add(nodes[start]);
@@ -49,9 +39,7 @@ class Solution {
 
             if(curr == nodes[end]) return "yes";
 
-            for(Node child : curr.outgoingEdges) {
-                q.add(child);
-            }
+            q.addAll(curr.outgoingEdges);
         }
 
         return "no";
