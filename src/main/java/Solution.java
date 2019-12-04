@@ -1,10 +1,7 @@
 import jdk.nashorn.internal.runtime.arrays.ArrayIndex;
 
 import java.io.InputStream;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
 
 class Solution {
 
@@ -50,9 +47,33 @@ class Solution {
         int n = sc.nextInt();
         int m = sc.nextInt();
         int s = sc.nextInt();
-
         Node[] nodes = new Node[n+1];
 
-        return "false";
+        for(int i = 1; i < nodes.length; i++)
+            nodes[i] = new Node();
+
+        while(sc.hasNextInt()) {
+            int from = sc.nextInt();
+            int to = sc.nextInt();
+            sc.nextInt();
+
+            nodes[from].outgoingEdges.add(nodes[to]);
+        }
+
+        sc.close();
+
+        Stack<Node> stack = new Stack<>();
+        stack.push(nodes[s]);
+
+        while(!stack.isEmpty()) {
+            Node node = stack.pop();
+
+            if(node.marked) return "yes";
+            node.marked = true;
+
+            stack.addAll(node.outgoingEdges);
+        }
+
+        return "no";
     }
 }
