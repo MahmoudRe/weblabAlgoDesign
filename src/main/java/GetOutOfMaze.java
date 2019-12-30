@@ -1,9 +1,7 @@
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
 
 public class GetOutOfMaze {
 
@@ -50,5 +48,16 @@ public class GetOutOfMaze {
 
         System.out.println(outOfMaze(in));
         System.out.println("Actual: yes");
+    }
+}
+
+// Helper Classes ----------------------------- //
+class MazeNode {
+    List<MazeNode> outgoingEdges;
+    boolean marked;
+
+    public MazeNode() {
+        this.outgoingEdges = new ArrayList<>();
+        this.marked = false;
     }
 }
