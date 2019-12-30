@@ -5,17 +5,6 @@ import java.util.*;
 
 public class RoutingTrains {
 
-    // Helper Classes ---------------
-    private static class Node {
-        List<Node> outgoingEdges;
-        boolean marked;
-
-        public Node() {
-            this.outgoingEdges = new ArrayList<>();
-            this.marked = false;
-        }
-    }
-
     public static String routingTrains(InputStream in) {
         Scanner sc = new Scanner(in);
         int n = sc.nextInt();
@@ -57,5 +46,17 @@ public class RoutingTrains {
 
         System.out.println(routingTrains(in));
         System.out.println("Actual: yes");
+    }
+
+
+    // Helper Classes ---------------
+    private static class Node {
+        List<Node> outgoingEdges;
+        boolean marked;
+
+        public Node() {
+            this.outgoingEdges = new ArrayList<>();
+            this.marked = false;
+        }
     }
 }
