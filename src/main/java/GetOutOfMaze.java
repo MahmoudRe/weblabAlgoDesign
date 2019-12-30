@@ -98,6 +98,32 @@ public class GetOutOfMaze {
         return Integer.toString(costs[t]);
     }
 
+    // Helper Classes ----------------------------- //
+    private static class MazeNode {
+        List<MazeNode> outgoingEdges;
+        boolean marked;
+
+        public MazeNode() {
+            this.outgoingEdges = new ArrayList<>();
+            this.marked = false;
+        }
+    }
+
+    private static class MazeNode2 implements Comparable<MazeNode2> {
+        int i, cost;
+
+        public MazeNode2(int i, int cost) {
+            this.i = i;
+            this.cost = cost;
+        }
+
+        @Override
+        public int compareTo(MazeNode2 n2) {
+            return this.cost - n2.cost;
+        }
+    }
+
+    // Main ----------------------
     public static void main(String[] args) throws FileNotFoundException {
 
         InputStream in = new FileInputStream("src/main/java/getOutOfMaze.txt");
@@ -111,30 +137,5 @@ public class GetOutOfMaze {
 
         System.out.println(outOfMazeFastest(in2));
         System.out.println("Actual: 118");
-    }
-}
-
-// Helper Classes ----------------------------- //
-class MazeNode {
-    List<MazeNode> outgoingEdges;
-    boolean marked;
-
-    public MazeNode() {
-        this.outgoingEdges = new ArrayList<>();
-        this.marked = false;
-    }
-}
-
-class MazeNode2 implements Comparable<MazeNode2> {
-    int i, cost;
-
-    public MazeNode2(int i, int cost) {
-        this.i = i;
-        this.cost = cost;
-    }
-
-    @Override
-    public int compareTo(MazeNode2 n2) {
-        return this.cost - n2.cost;
     }
 }
