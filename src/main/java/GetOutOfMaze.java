@@ -42,7 +42,7 @@ public class GetOutOfMaze {
         return "no";
     }
 
-    public static String outOfTheMazeFastest(InputStream in) {
+    public static String outOfMazeFastest(InputStream in) {
         Scanner sc = new Scanner(in);
         /*
          * We already parse the input for you and should not need to make changes to this part of the code.
@@ -104,6 +104,13 @@ public class GetOutOfMaze {
 
         System.out.println(outOfMaze(in));
         System.out.println("Actual: yes");
+
+        // --------- //
+
+        InputStream in2 = new FileInputStream("src/main/java/getOutOfMazeFastest.txt");
+
+        System.out.println(outOfMazeFastest(in2));
+        System.out.println("Actual: 118");
     }
 }
 
