@@ -14,10 +14,10 @@ public class GetOutOfMaze {
         int start = sc.nextInt();
         int end = sc.nextInt();
 
-        Node[] nodes = new Node[n + 1];
+        MazeNode[] mazeNodes = new MazeNode[n + 1];
 
-        for(int i = 0; i < nodes.length; i++) {
-            nodes[i] =  new Node();
+        for(int i = 0; i < mazeNodes.length; i++) {
+            mazeNodes[i] =  new MazeNode();
         }
 
         while(sc.hasNextInt()) {
@@ -25,18 +25,18 @@ public class GetOutOfMaze {
             int to = sc.nextInt();
             sc.nextInt();
 
-            nodes[from].outgoingEdges.add(nodes[to]);
+            mazeNodes[from].outgoingEdges.add(mazeNodes[to]);
         }
 
         sc.close();
 
-        Queue<Node> q = new LinkedList<>();
-        q.add(nodes[start]);
+        Queue<MazeNode> q = new LinkedList<>();
+        q.add(mazeNodes[start]);
 
         while(!q.isEmpty()) {
-            Node curr = q.poll();
+            MazeNode curr = q.poll();
 
-            if(curr == nodes[end]) return "yes";
+            if(curr == mazeNodes[end]) return "yes";
 
             q.addAll(curr.outgoingEdges);
         }

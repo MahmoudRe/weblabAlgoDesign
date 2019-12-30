@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Node {
+public class MazeNode {
 
-    List<Node> outgoingEdges;
+    List<MazeNode> outgoingEdges;
 
     boolean marked;
 
-    public Node() {
+    public MazeNode() {
         this.outgoingEdges = new ArrayList<>();
         this.marked = false;
     }
