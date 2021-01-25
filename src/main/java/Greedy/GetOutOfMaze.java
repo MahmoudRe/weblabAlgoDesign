@@ -1,3 +1,5 @@
+package Greedy;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -126,14 +128,14 @@ public class GetOutOfMaze {
     // Main ----------------------
     public static void main(String[] args) throws FileNotFoundException {
 
-        InputStream in = new FileInputStream("src/main/java/getOutOfMaze.txt");
+        InputStream in = new FileInputStream("src/main/java/Greedy/getOutOfMaze.txt");
 
         System.out.println(outOfMaze(in));
         System.out.println("Actual: yes");
 
         // --------- //
 
-        InputStream in2 = new FileInputStream("src/main/java/getOutOfMazeFastest.txt");
+        InputStream in2 = new FileInputStream("src/main/java/Greedy/getOutOfMazeFastest.txt");
 
         System.out.println(outOfMazeFastest(in2));
         System.out.println("Actual: 118");

@@ -1,7 +1,9 @@
+package Greedy;
+
 import java.io.*;
 import java.util.*;
 
-class Solution {
+class Scheduler {
 
     private static long schedulingCostLogM(InputStream in) {
 
@@ -30,7 +32,7 @@ class Solution {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        InputStream in = new FileInputStream("src/main/java/getOutOfMaze.txt");
+        InputStream in = new FileInputStream("src/main/java/Greedy/getOutOfMaze.txt");
 
         System.out.println(schedulingCostLogM(in));
     }

@@ -1,3 +1,5 @@
+package Greedy;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -46,7 +48,7 @@ public class PlanningBikeRepairs {
     }
 
     public static void main(String[] args) throws FileNotFoundException {
-        InputStream in = new FileInputStream("src/main/java/planningBikeRepairs.txt");
+        InputStream in = new FileInputStream("src/main/java/Greedy/planningBikeRepairs.txt");
 
         System.out.println(planningBikeRepairs(in));
         System.out.println("Actual: 5");

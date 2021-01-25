@@ -1,3 +1,5 @@
+package Greedy;
+
 public class PackingTrucks {
 
      /**

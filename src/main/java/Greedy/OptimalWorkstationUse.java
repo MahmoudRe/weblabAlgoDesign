@@ -1,3 +1,5 @@
+package Greedy;
+
 import java.util.*;
 
 class OptimalWorkstationUse {
